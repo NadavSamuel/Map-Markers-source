@@ -1,0 +1,24 @@
+.info-window {
+    width: 150px;
+    h2 {
+        padding: 10px 0px 20px 0px;
+        text-align: center
+    }
+    .btns-container{
+        display: flex;
+        justify-content: space-around;
+    }
+    button{
+        width: 45%;
+    }
+}
+.edit-title{
+    justify-content: center;
+    input{
+        width: 100%;
+    }
+    
+    >* :not(:first-child){
+        margin-top: 15px;
+    }
+}

@@ -1,0 +1,27 @@
+.table-cmp-container {
+    width: 95%;
+    margin: 70px 0;
+    input {
+        margin-bottom: 20px;
+        border-bottom: none;
+        padding: 10px 30px;
+        background-color: white;
+        border-radius: 20px;
+        &:focus {
+            background-color: $clr3;
+        }
+    }
+}
+h1 {
+    text-align: center;
+}
+.table-container {
+    width: 100%;
+    margin-top: 50px;
+    .description-slot {
+        min-width: 160px;
+        /* padding: 30px; */
+        height: 110px;
+        justify-content: space-around;
+    }
+}

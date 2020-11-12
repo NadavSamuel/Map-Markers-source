@@ -1,0 +1,26 @@
+.place-details-container {
+    > *:not(:last-child) {
+        padding: 10px 0;
+    }
+    .place-details {
+        margin-top: 25px;
+        > * {
+            margin: 10px 0;
+        }
+    }
+    p {
+        margin: 0;
+    }
+}
+.map-wraper-modal {
+    position: relative;
+    height: 450px;
+    min-width: 200px;
+}
+.place-edit-form {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    min-height: 320px;
+    justify-content: space-between;
+}

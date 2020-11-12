@@ -1,0 +1,41 @@
+.ribbon-wrapper {
+    width: 108px;
+    height: 108px;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: 0;
+ }
+.ribbon {
+  font: bold 15px Sans-Serif;
+  line-height: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  position: relative;
+  padding: 6px 0;
+  left: 0px;
+  top: 26px;
+  background-color: red;
+  color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  letter-spacing: 0.5px;
+  width: 135px;
+  height: 15px; 
+  }
+  
+  .ribbon:before {
+    content: "On Sale!";
+    position: absolute;
+    bottom: -4px; 
+    right: 0;
+}
+  
+  .ribbon:before {
+    left: 0; }
+  
+  .ribbon:after {
+    right: 0; }

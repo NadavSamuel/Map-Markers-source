@@ -1,0 +1,29 @@
+button{
+    background-color: $clr4;
+    border: 1px solid;
+    cursor: pointer;
+    padding: 10px;
+    color: white;
+    transition: background-color 0.3s, ;
+    &:hover{
+    background-color: white;
+    color: black;
+
+    }
+}
+/////////////// CLOSE BTN
+
+
+.close-btn{
+    &::before {
+        content: 'X'; // here is your X(cross) sign.
+        color: #fff;
+      }
+      &:hover{
+        &::before{
+            color: black;
+
+        }
+        
+      }
+}

@@ -1,0 +1,41 @@
+.about-container {
+    min-height: 100vh;
+    padding-top: 30px;
+     >*:not(:last-child) {
+        margin-bottom: 30px;
+    }
+    .profile-img-container {
+        img {
+            width: 370px;
+            border-radius: 50%;
+        }
+    }
+    .personal-txt-container{
+        margin-bottom: 40px;
+        background-color: #ffffff82;
+        max-width: 540px;
+        padding:15px;
+        h1{
+            text-align: start;
+        }
+        span{
+            font-family: montserrat-black
+        }
+        p{
+            font-family: montserrat-regular;
+            font-size: 1.2rem;
+        }
+    }
+}
+@media (max-width: 400px) {
+    .about-container {
+        .profile-img-container {
+            img {
+                width: 70%;
+            }
+        }
+        .personal-txt-container{
+            max-width: 300px;
+        }
+    }
+}

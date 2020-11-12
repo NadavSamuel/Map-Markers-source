@@ -1,0 +1,28 @@
+footer {
+    color: white;
+    background-color: $clr4;
+    text-align: center;
+    padding: 15px 0;
+    .footer-content-container{
+        margin: $nav-footer-margin;
+        .social-btns-container{
+            a{
+                color:white;
+            }
+            span{
+                padding :5px;
+                width: 20px;
+                svg{
+                    font-size: 2.5rem;
+                }
+                &:hover{
+                    color: $clr2;
+                }
+            }
+        }
+    }
+    p {
+        margin: 0;
+
+    }
+}
