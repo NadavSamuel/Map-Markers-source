@@ -12,7 +12,7 @@ export function EditPlace(props) {
                     <input name="title" type="text" value={placeToEdit.title} onChange={handleChange} />
                 <label htmlFor="Description">Description: </label>
                 <textarea name="description" id="" cols="30" rows="10" value={placeToEdit.description} onChange={handleChange}></textarea>
-                <button >Edit </button>
+                <button >Save </button>
             </form>
         </React.Fragment>
 

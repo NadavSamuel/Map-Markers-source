@@ -1,10 +1,12 @@
 import React from 'react';
-import { useDispatch } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { setNotification } from '../actions/notificationActions'
-import { setCenter } from '../actions/placeActions'
+import { setCenter, savePlace } from '../actions/placeActions'
 
 export function CurrLocationBtn(props) {
     const dispatch = useDispatch()
+    const { places } = useSelector(state => state.placeReducer);
+
     function onSetCurrLocation() {
 
         function setCurrLocation(pos) {
@@ -12,7 +14,23 @@ export function CurrLocationBtn(props) {
                 lat: pos.coords.latitude,
                 lng: pos.coords.longitude
             }
-            dispatch(setCenter(position))
+            try {
+                dispatch(setCenter(position))
+                const currPlaceInList = places.find(place => (place.position.lat === position.lat && place.position.lng === position.lng))
+                if (!currPlaceInList) {
+                   const newMarker = {
+                        position,
+                        title : 'Current place',
+                        description : ''
+                    }
+                    dispatch(savePlace(newMarker))
+                }
+            }
+            catch {
+                dispatch(setNotification('err', `OOPS! Could'nt get your current location`))
+
+            }
+
         }
         function error(err) {
             console.warn(`ERROR(${err.code}): ${err.message}`);

@@ -3,6 +3,8 @@ import { Map, Marker, GoogleApiWrapper } from 'google-maps-react';
 import { useDispatch, useSelector } from 'react-redux'
 import { setInitialCenter,removePlace,loadPlaces} from '../actions/placeActions.js';
 import { setNotification} from '../actions/notificationActions'
+import {googleResturantsService} from '../services/googleResturantsService'
+import { Link } from 'react-router-dom'
 
 export function _PlaceDetails(props) {
     const dispatch = useDispatch()
@@ -49,6 +51,8 @@ export function _PlaceDetails(props) {
                     <h3><span>Langtitude: </span>{place.position.lng}</h3>
                     <h3>Description:</h3>
                     <p>{place.description || 'No description yet'}</p>
+                    <Link to={`/resturants/${place._id}`} >See resturants around!</Link>
+                    
                 </div>
                 <div className="action-btns flex space-between">
                     <button onClick={toggleIsEdit}>Edit </button>

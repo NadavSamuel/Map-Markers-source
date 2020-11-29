@@ -9,7 +9,6 @@ const initialState = {
         lng: -88.081807
       },
     center:null,
-    // isUserGeolocation:null
 }
 
 export function placeReducer(state = initialState, action) {
@@ -28,7 +27,6 @@ export function placeReducer(state = initialState, action) {
             return {
                 ...state,
                 center: action.position,
-                // isUserGeolocation:action.isUserGeolocation
             }
             case 'SELECT_PLACE':
                 return {

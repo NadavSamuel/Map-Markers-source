@@ -1,0 +1,44 @@
+.resturant-card {
+    min-height: 200px;
+    padding: 20px;
+    border: 1px solid;
+    width: 90%;
+    margin: 20px 0;
+    background-color: $clr3;
+    .resturant-img-container {
+        display: flex;
+        justify-content: center;
+        width: 450px;
+        height: 200px;
+    }
+    img {
+        object-fit: cover;
+    }
+    .default-img {
+        width: 115px;
+    }
+    .resturant-details {
+        padding-inline-start: 50px;
+        .resturant-title {
+            font-size: 1.5rem;
+        }
+    }
+}
+@media (max-width: 700px) {
+    .resturant-card {
+        flex-direction: column;
+
+        .resturant-img-container {
+            width: 100%;
+            align-self: center;
+        }
+        .default-img {
+            align-self: center;
+            margin-inline-end: 0;
+        }
+        .resturant-details {
+            padding-inline-start: 0;
+            margin-top: 20px;
+        }
+    }
+}

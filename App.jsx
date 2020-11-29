@@ -4,27 +4,39 @@ import { About } from './pages/About';
 import { Navbar } from './cmps/Navbar';
 import { Footer } from './cmps/Footer';
 import { MainApp } from './pages/MainApp'
-import {Notification} from './cmps/Notification'
-import {  useSelector } from 'react-redux'
+import { Notification } from './cmps/Notification'
+import { useSelector } from 'react-redux'
+import PlaceResturants from './pages/PlaceResturants';
+import Loader from 'react-loader-spinner'
 
 
 
 function App() {
   const currNotification = useSelector(state => state.notificationReducer.txt);
+  const isLoader = useSelector(state => state.systemReducer.isLoading);
 
   return (
     <div className="App">
       <Router>
-        <Navbar/>
+        <Navbar />
         <main>
-        <Switch>
-          <Route path="/about" component={About} />
-          <Route path="/" component={MainApp} />
-        </Switch>
+          <Switch>
+            <Route path="/resturants/:id" component={PlaceResturants} />
+            <Route path="/about" component={About} />
+            <Route path="/" component={MainApp} />
+          </Switch>
         </main>
-        <Footer/>
+        <Footer />
       </Router>
-        {currNotification &&<Notification/>}
+      {currNotification && <Notification />}
+      {isLoader && <div className="loader-container">
+        <Loader
+          type="Oval"
+          color="#f39233"
+          height={100}
+          width={100}
+        />
+      </div>}
     </div>
   );
 }

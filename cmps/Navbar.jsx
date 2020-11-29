@@ -14,9 +14,9 @@ export function Navbar() {
     const navbarLayout = (!windowSize ? 'column-layout mobile-links' : '');
     return (
         <header className="navbar flex align-center space-between  fill">
-            <div className="navbar-container flex space-between full-width">
-                <Link to="/" className="flex align-center full-width space-between"><img className='logo' src={require('../assets/imgs/logo.png')} alt="" />
-                <MenuIcon onClick={() => setIsMenuShown(true)} className='phone-view ' ></MenuIcon></Link>
+            <div className="navbar-container flex space-between full-width align-center">
+                <Link to="/" className="flex align-center  space-between"><img className='logo' src={require('../assets/imgs/logo.png')} alt="" /></Link>
+                <MenuIcon onClick={() => setIsMenuShown(true)} className='phone-view ' ></MenuIcon>
                 <div className={`main-nav-container flex space-between full-width align-center justify-end ${isHideMenu}`}>
                     <ul className={`clean-list flex  full-view clean-link-list ${navbarLayout}`} >
                         <Link to="/about" onClick={closeMenu}><li>About</li></Link>

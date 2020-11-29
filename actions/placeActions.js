@@ -34,6 +34,11 @@ export function loadPlaces(filterBy) {
         dispatch(_setPlaces(places));
     }
 }
+export function reOrganizePlaces(places) {
+    return async (dispatch) => {
+        dispatch(_setPlaces(places));
+    }
+}
 export function removePlace(placeId) {
     return async (dispatch) => {
         mainService.remove(placeId)
@@ -46,9 +51,15 @@ export function setFilter(filterBy) {
 
 export  function savePlace(place) {
     return async (dispatch,getState) => {
-        const savedPlace = await mainService.save(place)
         const type = place._id ? 'UPDATE_PLACE' : 'ADD_PLACE';
+        const savedPlace = await mainService.save(place)
         dispatch({ type, place: savedPlace })  
+    }
+}
+export  function reOrgenizePlaces(movedPlaceIdx,destinationIdx) {
+    return async (dispatch) => {
+        const reOrganisedPlaces = await mainService.saveReorgenizedPlaces(movedPlaceIdx,destinationIdx)
+        dispatch(_setPlaces(reOrganisedPlaces));
     }
 }
 

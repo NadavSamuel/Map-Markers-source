@@ -5,7 +5,7 @@ import { placeReducer } from './placeReducer';
 import { notificationReducer } from './notificationReducer';
 
 const rootReducer = combineReducers({
-  system: systemReducer,
+  systemReducer: systemReducer,
   placeReducer: placeReducer,
   notificationReducer:notificationReducer,
   user: userReducer

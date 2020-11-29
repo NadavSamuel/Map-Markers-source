@@ -6,6 +6,7 @@ import {  loadPlaces, savePlace, removePlace } from '../actions/placeActions.js'
 import { setNotification } from '../actions/notificationActions'
 import InfoWindowEx from '../cmps/InfoWindowEx'
 import { Map, Marker, GoogleApiWrapper } from 'google-maps-react';
+import {setLoader} from '../actions/systemActions'
 
 function _GoogleMap(props) {
 
@@ -20,8 +21,12 @@ function _GoogleMap(props) {
 
 
   useEffect(() => {
+    dispatch(setLoader())
+
     dispatch(loadPlaces())
     if (center) onSetZoom()
+    dispatch(setLoader())
+
   }, [center])
 
   function onSetZoom() {

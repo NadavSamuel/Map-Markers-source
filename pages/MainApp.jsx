@@ -10,9 +10,8 @@ export function MainApp(props){
 
       <section className="main-app-container  column-layout" >
         <section className="column-layout">
-          <h1>Map Markers</h1>
-          <CurrLocationBtn />
           <GoogleMap />
+          <CurrLocationBtn />
         </section>
         <section className="table-cmp-container">
           <Filter/>
